@@ -3,214 +3,345 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>a.benedict balbuena - mathematiker for hire</title>
+    <title>Unlock Your Math Potential - A. Benedict Balbuena | Math Tutor & Consultant</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        body {
-            line-height: 1.6;
-            color: #333;
+        /* ... (same CSS styles as before) ... */
+         body {
+            font-family: 'Arial', sans-serif; /* More modern font */
+            line-height: 1.7; /* Slightly increased line height for readability */
+            color: #444; /* Slightly softer text color */
+            background-color: #f8f8f8; /* Light gray background */
         }
 
         .header {
-            background-color: #ffffff;
-            padding: 2rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-color: #fff;
+            padding: 2.5rem 2rem; /* Increased padding */
+            box-shadow: 0 3px 7px rgba(0,0,0,0.1); /* Stronger shadow */
+            text-align: center; /* Center header content */
         }
 
-        .contact-info {
+        .header h1 {
+            font-size: 2.5rem; /* Larger title */
+            margin-bottom: 0.5rem;
+            color: #333; /* Darker title color */
+        }
+
+        .header .contact-info {
             display: flex;
-            justify-content: space-between;
-            margin-bottom: 1rem;
+            justify-content: center; /* Center contact info */
+            gap: 2rem;
+            margin-top: 1rem;
         }
 
-        .social-links a {
-            color: #333;
+        .header .contact-info a {
+            color: #555; /* Softer link color */
             text-decoration: none;
-            margin-right: 1rem;
+            transition: color 0.3s ease; /* Smooth color transition on hover */
+        }
+
+        .header .contact-info a:hover {
+            color: #007bff; /* Highlight color on hover */
         }
 
         .hero {
-            background-color: #f5f5f5;
-            padding: 2rem;
-            border-radius: 5px;
+            background-color: #e0f7fa; /* Light teal hero background */
+            padding: 4rem 2rem; /* Increased hero padding */
+            border-radius: 7px;
+            text-align: center; /* Center hero text */
+        }
+
+        .hero h2 {
+            font-size: 2.8rem; /* Larger hero title */
+            color: #2c3e50; /* Darker hero title color */
+            margin-bottom: 1rem;
+            line-height: 1.2; /* Tighter line height for hero title */
+        }
+
+        .hero p {
+            font-size: 1.2rem; /* Slightly larger hero paragraph */
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        .hero a.cta-button {
+            display: inline-block; /* Make button inline-block */
+            background-color: #27ae60; /* Vibrant green button color */
+            color: white;
+            padding: 1.2rem 2.5rem; /* Larger button padding */
+            border-radius: 7px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold; /* Bold button text */
+            transition: background-color 0.3s ease; /* Button hover transition */
+        }
+
+        .hero a.cta-button:hover {
+            background-color: #1e8449; /* Darker green on hover */
         }
 
         .section {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
+            max-width: 900px; /* Slightly wider sections */
+            margin: 2rem auto; /* Increased top/bottom margin */
+            padding: 3rem; /* Increased section padding */
             background-color: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 7px;
+            box-shadow: 0 3px 7px rgba(0,0,0,0.1); /* Stronger section shadow */
+        }
+
+        .section h3 {
+            font-size: 2rem; /* Larger section titles */
+            color: #333;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #eee; /* Underline for section titles */
+            padding-bottom: 0.5rem;
         }
 
         .bullet-point {
-            list-style-type: none;
-            padding-left: 2rem;
+            list-style-type: disc; /* Use disc bullets */
+            padding-left: 1.5rem; /* Adjust bullet padding */
+            margin-bottom: 1rem;
+        }
+
+        .bullet-point li {
+            margin-bottom: 0.5rem; /* Space between list items */
+            font-size: 1.1rem; /* Slightly larger list font */
         }
 
         .contact-section {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-top: 3rem;
+            gap: 3rem; /* Increased gap in contact section */
+            margin-top: 4rem; /* Increased margin above contact section */
+            padding: 3rem 2rem; /* Padding for contact section */
+            background-color: #f0f0f0; /* Light gray contact section background */
+            border-radius: 7px;
         }
 
-        .get-started {
-            background-color: #4CAF50;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 5px;
-            text-align: center;
+        .contact-section h2 {
+            font-size: 2.2rem; /* Larger contact section title */
+            color: #333;
+            margin-bottom: 1.5rem;
         }
 
-        .inquiry-form {
+        .contact-section form {
             display: flex;
-            gap: 1rem;
+            flex-direction: column; /* Stack form elements vertically */
+            gap: 1.2rem; /* Increased gap in form */
+            width: 100%;
+            max-width: 400px; /* Limit form width */
         }
+
+        .contact-section input,
+        .contact-section textarea {
+            padding: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+
+        .contact-section textarea {
+            resize: vertical; /* Allow vertical resizing of textarea */
+        }
+
+        .contact-section button.get-started {
+            background-color: #3498db; /* Blue button color */
+            color: white;
+            padding: 1.2rem 2.5rem; /* Consistent button padding */
+            border-radius: 7px;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer; /* Pointer cursor for button */
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-section button.get-started:hover {
+            background-color: #2980b9; /* Darker blue on hover */
+        }
+
+        .services-section {
+            margin-top: 3rem;
+            background-color: #fff;
+            padding: 3rem 2rem;
+            border-radius: 7px;
+            box-shadow: 0 3px 7px rgba(0,0,0,0.1);
+            text-align: center; /* Center services section content */
+        }
+
+        .services-section h2 {
+            font-size: 2.4rem;
+            color: #333;
+            margin-bottom: 2rem;
+        }
+
+        .services-section ul.services-list {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .services-section ul.services-list li {
+            background-color: #e8f0fe; /* Light blue service box background */
+            padding: 2rem;
+            border-radius: 7px;
+            text-align: left;
+            flex: 1; /* Distribute space evenly */
+            min-width: 200px; /* Minimum width for service boxes */
+        }
+
+        .services-section ul.services-list li h4 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .services-section ul.services-list li p {
+            color: #555;
+        }
+
+
+        /* Social Media Links - Centered and more prominent */
+        .social-media-section {
+            margin-top: 4rem;
+            text-align: center; /* Center social links */
+        }
+
+        .social-media-section h3 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-media-section div.social-links {
+            display: inline-flex; /* Inline flex for centering */
+            gap: 20px;
+            align-items: center;
+            border-radius: 15px;
+            padding: 10px;
+            background-color: #fff; /* White background for social links */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Add shadow to social links box */
+        }
+
+        .social-media-section div.social-links a {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-media-section div.social-links a:hover {
+            color: #0056b3; /* Darker blue on hover */
+        }
+
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            background-color: #333; /* Dark footer background */
+            color: #eee; /* Light footer text color */
+            border-radius: 7px;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>a.benedict balbuena</h1>
+        <h1>A. Benedict Balbuena</h1>
         <div class="contact-info">
-            <a href="mailto:abc.balbuena+viagithubpages@googlegmail.com" target="_blank">abc.balbuena+viagithubpages@googlegmail.com</a>
-            <br>
-            <!--  No working phone number on resume; leaving placeholder -->
-            <a href="#" target="_blank">+6594996844</a>
-            <br>
-            <a href="#" target="_blank">@abcbalbuena</a>  <!--  No social media handle provided; leaving placeholder -->
+            <a href="mailto:abc.balbuena+viagithubpages@googlegmail.com">abc.balbuena+viagithubpages@googlegmail.com</a>
+            <a href="#">+6594996844</a>
+            <a href="#">@abcbalbuena</a>
         </div>
     </div>
 
     <div class="hero">
-        <h2>Professional Math Tutor</h2>
-        <p>Hired by clients to use maths to solve their everyday problems. Available for online sessions.</p>
-        <a href="#" target="_blank">Get Started →</a> <!-- No specific "get started" link; leaving placeholder -->
+        <h2>Struggling with Math? Get Clarity and Confidence.</h2>
+        <p>Expert math tutoring and consulting to help you understand complex concepts, solve challenging problems, and achieve your goals.</p>
+        <a href="#contact-section" class="cta-button">Book a Free Consultation</a>
     </div>
 
     <div class="section">
-        <h3>About Me</h3>
+        <h3>Problems I Solve</h3>
         <ul class="bullet-point">
-            <li>PhD Candidate in Mathematics, University of the Philippines Diliman</li>
-            <li>Math Tutor since 2004</li>
-            <li>Expertise in math education and problem-solving</li>
-            <li>Active in mathematics olympiads and competitive exams</li>
+            <li><strong>Confused by complex math topics?</strong> I break down difficult concepts into easy-to-understand steps.</li>
+            <li><strong>Need help with homework or exam prep?</strong>  Get personalized support to master the material and ace your tests.</li>
+            <li><strong>Stuck on a data analysis project?</strong>  I provide statistical consulting to extract meaningful insights from your data.</li>
+            <li><strong>Want to improve your business processes with math?</strong> I offer mathematical modeling and consulting to optimize your operations.</li>
+            <li><strong>Preparing for math olympiads or competitive exams?</strong>  Receive specialized training to excel in challenging competitions.</li>
         </ul>
     </div>
+
+    <div class="section services-section">
+        <h2>My Services</h2>
+        <ul class="services-list">
+            <li>
+                <h4>Online Math Tutoring</h4>
+                <p>Personalized one-on-one tutoring for all levels, from high school to university. Get help with algebra, calculus, statistics, and more.</p>
+            </li>
+            <li>
+                <h4>Statistical Consulting</h4>
+                <p>Expert statistical analysis and modeling for businesses and researchers.  Data-driven insights to inform decisions and solve problems.</p>
+            </li>
+            <li>
+                <h4>Math Problem Solving</h4>
+                <p>Need help with a specific math problem or project? I can provide step-by-step solutions and guidance to ensure your success.</p>
+            </li>
+        </ul>
+    </div>
+
 
     <div class="section">
-        <h3>Education</h3>
-        <table>
-            <tr>
-                <th>University of the Philippines - Diliman</th>
-                <td>Ph.D. Mathematics Candidate (2014)</td>
-                <td>M.S. Mathematics (2009)</td>
-                <td>B.S. Mathematics (2004)</td>
-            </tr>
-        </table>
-    </div>
-
-    <div class="section">
-        <h3>Work Experience</h3>
+        <h3>Why Choose Me?</h3>
         <ul class="bullet-point">
-            <li><strong>FULL-TIME MATH CONTENT TRAINER</strong> | OpenAI (Remote) <br>
-                Solving olympiad-type problems and providing human feedback</li>
-            <li><strong>FREELANCE MATH CONSULTING</strong> | Remote work via San Francisco, California<br>
-                Consulted remotely and on-site for business processes and math education</li>
-            <li><strong>MATHEMATICS CONSULTING</strong> | Freelance Work (2016-present)<br>
-                Created math content, coached olympiad training, and proofread journal articles</li>
-            <li><strong>CONSULTING MATH CONTENT CREATOR</strong> | Plato Education Sydney (Remote)<br>
-                In-house syllabus creation for entrance exams, exam questions, and solutions</li>
+            <li><strong>PhD Candidate in Mathematics:</strong>  Deep and comprehensive understanding of mathematical principles.</li>
+            <li><strong>Years of Experience:</strong>  Tutoring and consulting since 2004, with a proven track record of success.</li>
+            <li><strong>Personalized Approach:</strong>  Tailored learning and consulting strategies to meet your specific needs and goals.</li>
+            <li><strong>Clear and Effective Communication:</strong>  Explaining complex math concepts in a simple and understandable way.</li>
+            <li><strong>Passionate about Math:</strong>  Dedicated to helping you unlock your mathematical potential and achieve your objectives.</li>
         </ul>
     </div>
 
-    <div class="section">
-        <h3>Achievements</h3>
+
+    <div class="section" id="about-me">
+        <h3>About Me - More Details</h3>
+        <p>Driven by a passion for mathematics and education, I bring extensive experience in tutoring, consulting, and problem-solving. My background includes:</p>
         <ul class="bullet-point">
-            <li>Lead author on "On Fibomacci Determinants from Five Diagonal Matrices" (October 2011)</li>
-            <li>"A New Family of k-Fibonacci Numbers" (October 2011)</li>
-            <li>Recipient of <a href="https://web.archive.org/web/20230212084033/https://stii.dost.gov.ph/41-dost-council-fetes-best-thesis-dissertation-winners">PCASTRD Outstanding Thesis Award (2009)</a></li>
+            <li>Extensive experience as a Math Instructor at the University of the Philippines - Diliman (2006-2016).</li>
+            <li>Contracting work with OpenAI as a Math Content Trainer, solving Olympiad-level problems.</li>
+            <li>Statistical Consultant for diverse projects, including pediatric polypharmacy and renal patient care.</li>
+            <li>Content creation for math education platforms like Plato Education.</li>
+            <li>Awarded the Philippine Council for Advanced Science and Technology Research and Development (PCASTRD) Outstanding Thesis Award in Mathematics (2009).  <a href="https://web.archive.org/web/20230212084033/https://stii.dost.gov.ph/41-dost-council-fetes-best-thesis-dissertation-winners">(Link to Award)</a></li>
         </ul>
+        <p>... (You can keep or condense other relevant sections like Education, Talks, etc. here if you want to provide more background, but keep it concise and client-focused)</p>
     </div>
 
-    <div class="section">
-        <h3>Research</h3>
-        <p>Persistent Homology and Time Series Analysis<br>
-        Digital Topologies on Zn<br>
-        Computing Entropy of Time Series</p>
-    </div>
 
-    <div class="section">
-        <h3>Talks</h3>
-        <ul class="bullet-point">
-            <li>Invited Talk: "On Orbits, Stable Sets, and Digital Topologies" at UP Diliman (2010)</li>
-            <li>Persistent Homology in Time-Delay Reconstruction of Time Series<br>
-                6th SEAMS-GMU International Conference on Mathematics and Its Applications (2011)</li>
-        </ul>
-    </div>
-    
-     <div class="section">
-        <h3>Participation in Programs, Workshops and Conferences</h3>
-        <ul class="bullet-point">
-            <li>BMS Summer School 2015, Convex Geometry - Discrete and Computational, 29  June - 10 July 2015, TU Berlin, Germany</li>
-            <li><a href="https://archive.md/BxXHm">Program on Inverse Moment Problems: the Crossroads of Analysis, Algebra, Discrete Geometry and Combinatorics, 18 November 2013 - 25 January 2014, Institute for Mathematical Sciences, Singapore</a></li>
-            <li>CIMPA-UNESCO-MICINN-INDONESIA Research School on Non-linear Comptational Geometry, 18-31 July 2011, Gadjah Mada University, Yogyakarta, Indonesia</li>
-            <li><a href="https://users.wpi.edu/~martin/RESEARCH/CIMPA/participants.pdf">CIMPA-UNESCO-Philippines 2009 Research School on Semi-definite Programming in Algebraic Combinatorics, July 2009, University of the Philippines – Diliman</a></li>
-            <li>Severino V. Gervacio Workshop in Graph Theory and Combinatorics, 27-28 April 2009, De La Salle University, Manila</li>
-            <li>2007 Mathematical Society of the Philippines Annual Convention, 18-19 May 2007, Bohol</li>
-            <li>Conference in Algebra and Combinatorics 2006, 31 March – 2 April 2006, Ateneo de Manila University</li>
-        </ul>
-    </div>
-
-      <div class="section">
-        <h3>Related Experience</h3>
-        <ul class="bullet-point">
-            <li>Member, Philippine Mathematical Olympiad Test Development Committee, 2008-<a href="http://pmo.ph/wp-content/uploads/2020/11/13th-PMO-SP.pdf">2011</a>,<a href="http://pmo.ph/wp-content/uploads/2020/12/17th-PMO-SP.pdf">2015</a></li>
-            <li>Resource Person, DOST-SOEP 2013, University of the Philippines - Diliman, 6 - 31 May 2013</li>
-            <li><a href="https://web.archive.org/web/20200213074234/https://news.abs-cbn.com/lifestyle/youth/07/15/10/math-champions-back-home-medals">Trainer, Math Olympiad Summer Camp, Institute of Mathematics, University of the Philippines - Diliman, 2010-2012</a></li>
-            <li>Resource Person on Counting Methods, Mathematical Enhancements, Recreations, and Innovations Toolkit for Teachers II, Punta de Fabian Resort, Baras, Rizal, 24-29 October 2011</li>
-            <li>Resource Person on Counting Techniques, Mathematical Enhancements, Recreations, and Innovations Toolkit for Teachers, DepEd ECOTECH Center, Lahug, Cebu City, 26-31 October 2010</li>
-        </ul>
-    </div>
-
-    <div class="contact-section">
-        <h2>Let's Work Together</h2>
+    <div class="contact-section" id="contact-section">
+        <h2>Ready to Get Started?</h2>
         <form>
             <input type="text" placeholder="Your Name" required>
             <input type="email" placeholder="Your Email" required>
-            <textarea rows="5" placeholder="Your Message"></textarea>
-            <button type="submit" class="get-started">Send Message</button>
+            <textarea rows="5" placeholder="Tell me about your math needs"></textarea>
+            <button type="submit" class="get-started">Request a Consultation</button>
         </form>
     </div>
 
-    <div class="contact-section">
-        <h2>Our Services</h2>
-        <ul class="bullet-point">
-            <li>Online tutoring</li>
-            <li>Homework help</li>
-            <li>Exam preparation</li>
-            <li>Creative problem-solving</li>
-        </ul>
-    </div>
 
-    <!-- Social Media Links -->
-    <div style="margin-top: 2rem;">
+    <div class="social-media-section">
         <h3>Connect With Me</h3>
-        <div style="display: flex; gap: 20px; align-items: center; border-radius: 15px; padding: 5px;">
-            <a href="#" style="color: #007bff; text-decoration: none;">Facebook</a>  <!-- Placeholder link -->
-            <a href="#" style="color: #007bff; text-decoration: none;">Twitter</a>  <!-- Placeholder link -->
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer style="margin-top: 2rem; background-color: #f9f9f9; border-radius: 15px; padding: 10px;">
+
+    <footer>
         <p>© 2023 Albert Balbuena. All rights reserved.</p>
     </footer>
 

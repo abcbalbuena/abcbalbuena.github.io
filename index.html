@@ -1,399 +1,1119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alva Benedict Balbuena - Your Math Problem Solver | Tutoring, Consulting, and More</title> <!-- More Client-Focused Title -->
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alva Benedict Balbuena | Math Expert • Tutor • Consultant</title>
+  <meta name="description" content="PhD mathematician offering personalized tutoring, statistical consulting, and expert math content creation for students, researchers, and businesses."/>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #7c3aed;
+      --dark: #0f172a;
+      --light: #f8fafc;
+      --gray: #64748b;
+      --border: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --radius: 12px;
+      --transition: all 0.3s ease;
+    }
 
-        body {
-            line-height: 1.6;
-            color: #333;
-        }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background: var(--light);
+      scroll-behavior: smooth;
+    }
 
-        .header {
-            background-color: #ffffff;
-            padding: 2rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
 
-        .contact-info {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 1rem;
-        }
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      padding: 1rem 0;
+    }
+    
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+      padding: 0.25rem 0;
+    }
+    
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary);
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: var(--transition);
+    }
+    
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
 
-        .contact-info a { /* Style contact links */
-            color: #555;
-            text-decoration: none;
-            margin-right: 1rem;
-        }
+    /* Hero Section */
+    .hero {
+      padding: 5rem 0 3rem;
+      text-align: center;
+      background: linear-gradient(135deg, #eff6ff 0%, #f5f3ff 100%);
+      border-radius: 0 0 var(--radius) var(--radius);
+      margin-bottom: 3rem;
+    }
+    
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--gray);
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius);
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+    
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+    }
 
+    /* Sections */
+    section {
+      padding: 4rem 0;
+    }
+    
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
 
-        .hero {
-            background-color: #f5f5f5;
-            padding: 3rem 2rem; /* Increased padding for hero */
-            border-radius: 5px;
-            text-align: center; /* Center align hero text */
-        }
+    /* About */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    @media (min-width: 768px) {
+      .about-content {
+        grid-template-columns: 1fr 2fr;
+      }
+    }
+    
+    .profile-placeholder {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 3rem;
+      font-weight: 700;
+    }
 
-        .hero h1 {
-            font-size: 2.5rem; /* Larger hero heading */
-            margin-bottom: 0.5rem;
-            color: #333;
-        }
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .skill-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border: 1px solid var(--border);
+    }
+    
+    .skill-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.1);
+    }
+    
+    .skill-card h3 {
+      margin-bottom: 0.75rem;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    
+    .tag {
+      background: #eff6ff;
+      color: var(--primary);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
 
-        .hero p {
-            font-size: 1.2rem; /* Slightly larger hero paragraph */
-            color: #555;
-            margin-bottom: 1.5rem;
-        }
+    /* Experience Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 2px;
+      background: var(--border);
+    }
+    
+    .timeline-item {
+      position: relative;
+      padding-bottom: 2rem;
+      padding-left: 1.5rem;
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2.4rem;
+      top: 0.25rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--primary);
+      border: 3px solid white;
+      box-shadow: 0 0 0 2px var(--primary);
+    }
+    
+    .timeline-item h3 {
+      margin-bottom: 0.25rem;
+      font-size: 1.125rem;
+    }
+    
+    .timeline-item .date {
+      color: var(--gray);
+      font-size: 0.875rem;
+      margin-bottom: 0.5rem;
+      display: block;
+      font-weight: 500;
+    }
+    
+    .timeline-item .location {
+      color: var(--gray);
+      font-size: 0.875rem;
+      font-style: italic;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+    
+    .timeline-item ul {
+      padding-left: 1.25rem;
+      margin-top: 0.5rem;
+    }
+    
+    .timeline-item li {
+      color: var(--gray);
+      margin-bottom: 0.25rem;
+      font-size: 0.95rem;
+    }
+    
+    .timeline-item a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    .timeline-item a:hover {
+      text-decoration: underline;
+    }
 
+    /* Portfolio/Projects */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .portfolio-item {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border: 1px solid var(--border);
+    }
+    
+    .portfolio-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+    }
+    
+    .portfolio-content {
+      padding: 1.5rem;
+    }
+    
+    .portfolio-content h3 {
+      margin-bottom: 0.5rem;
+      color: var(--dark);
+    }
+    
+    .portfolio-content p {
+      color: var(--gray);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    
+    .portfolio-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    
+    .portfolio-link:hover {
+      text-decoration: underline;
+    }
 
-        .section {
-            max-width: 800px;
-            margin: 2rem auto; /* Added top/bottom margin for sections */
-            padding: 2rem;
-            background-color: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+    /* Achievements & Lists */
+    .achievements-list {
+      margin-top: 2rem;
+    }
+    
+    .achievements-list ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    
+    .achievements-list li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--gray);
+    }
+    
+    .achievements-list li:last-child {
+      border-bottom: none;
+    }
+    
+    .achievements-list a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    .achievements-list a:hover {
+      text-decoration: underline;
+    }
 
-        .section h3 {
-            font-size: 1.8rem; /* Larger section headings */
-            margin-bottom: 1.5rem;
-            color: #333;
-            border-bottom: 2px solid #eee; /* Added subtle underline */
-            padding-bottom: 0.5rem;
-        }
+    /* Contact */
+    .contact-content {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      transition: var(--transition);
+    }
+    
+    .contact-link:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
 
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      color: var(--gray);
+      font-size: 0.875rem;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
 
-        .bullet-point {
-            list-style-type: disc; /* More standard bullet points */
-            padding-left: 1.5rem; /* Adjusted bullet point padding */
-            margin-bottom: 1rem; /* Spacing between bullet points */
-        }
+    /* Mobile Menu */
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--dark);
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 1rem 2rem;
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow);
+      }
+      
+      .nav-links.active {
+        display: flex;
+      }
+      
+      .mobile-toggle {
+        display: block;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .hero p {
+        font-size: 1.1rem;
+      }
+    }
 
-        .bullet-point li {
-            margin-bottom: 0.5rem; /* Spacing within bullet points */
-        }
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate {
+      animation: fadeInUp 0.6s ease forwards;
+    }
+    
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
 
-
-        .contact-section {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 3rem;
-            padding: 2rem 0; /* Padding for contact section */
-            background-color: #f9f9f9; /* Light background for contact */
-            border-radius: 5px;
-        }
-
-        .contact-section h2 {
-            font-size: 2rem;
-            color: #333;
-            margin-bottom: 1rem;
-            text-align: center; /* Center align contact heading */
-        }
-
-
-        .get-started {
-            background-color: #4CAF50;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 5px;
-            text-align: center;
-            text-decoration: none; /* Ensure button text is not underlined */
-            display: inline-block; /* Make button behave like inline-block */
-        }
-
-        .get-started:hover {
-            background-color: #45a049; /* Darken button on hover */
-        }
-
-
-        .inquiry-form {
-            display: flex;
-            flex-direction: column; /* Stack form elements vertically */
-            gap: 0.8rem; /* Spacing in form */
-            width: 100%; /* Form takes full width */
-            max-width: 400px; /* Limit form width */
-        }
-
-        .inquiry-form input,
-        .inquiry-form textarea {
-            padding: 0.8rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-family: inherit; /* Inherit font from body */
-        }
-
-        .inquiry-form textarea {
-            resize: vertical; /* Allow vertical resizing of textarea */
-        }
-
-
-        /* Social Media Links */
-        .social-links {
-            margin-top: 2rem;
-            text-align: center; /* Center social links */
-        }
-
-        .social-links h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #555;
-            border-bottom: none; /* Remove underline from social links heading */
-            padding-bottom: 0;
-        }
-
-        .social-links a {
-            color: #007bff;
-            text-decoration: none;
-            margin: 0 1rem; /* Spacing between social links */
-            font-size: 1.1rem;
-        }
-
-        /* Footer */
-        footer {
-            margin-top: 2rem;
-            background-color: #f9f9f9;
-            border-radius: 5px;
-            padding: 1rem;
-            text-align: center;
-            color: #777;
-            font-size: 0.9rem;
-        }
-
-
-    </style>
+    /* Form Styles */
+    .mailto-form {
+      background: white;
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      max-width: 500px;
+      margin: 2rem auto;
+    }
+    
+    .form-group {
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+    
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    
+    .honeypot {
+      display: none !important;
+      visibility: hidden !important;
+      position: absolute !important;
+      left: -9999px !important;
+    }
+    
+    .math-challenge {
+      background: #f1f5f9;
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+      font-weight: 500;
+    }
+    
+    .form-note {
+      font-size: 0.875rem;
+      color: var(--gray);
+      margin-top: 1rem;
+      text-align: center;
+    }
+    
+    .spam-error {
+      color: #dc2626;
+      font-weight: 500;
+      margin-top: 0.5rem;
+      display: none;
+    }
+    
+    .copy-email {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    
+    .copy-status {
+      margin-left: 0.5rem;
+      color: var(--primary);
+      font-size: 0.875rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    
+    /* Section Cards */
+    .section-card {
+      background: white;
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      margin-top: 2rem;
+    }
+    
+    .section-card h3 {
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+    
+    .section-card p {
+      color: var(--gray);
+      margin-bottom: 1rem;
+    }
+  </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Alva Benedict Balbuena</h1> <!-- Full Name in Header -->
-        <div class="contact-info">
-            <a href="mailto:abc.balbuena+viagithubpages@googlegmail.com">abc.balbuena+viagithubpages@googlegmail.com</a>
-            <!-- <a href="#">+6594996844</a> --> <!-- Removed non-functional phone number from header for cleaner look -->
-            <!-- <a href="#">@abcbalbuena</a> --> <!-- Removed non-functional social handle from header for cleaner look -->
-        </div>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="container nav-content">
+      <a href="#" class="logo">abcbalbuena+maths@googlemail.com</a>
+      <button class="mobile-toggle" id="mobileToggle">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="active">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
+  </nav>
 
-    <div class="hero">
-        <h1>Need a Math Expert? Get Unstuck and Achieve Your Goals.</h1> <!-- Stronger, Benefit-Driven Headline -->
-        <p>From complex statistical analysis to simplifying challenging math concepts, I provide expert math solutions tailored to your needs. Whether you're a student, researcher, or business professional, let's solve your math problems together.</p> <!-- More Engaging Hero Paragraph -->
-        <a href="#contact-form-section" class="get-started">Book a Free Consultation →</a> <!-- Clear Call to Action, linking to contact form -->
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="animate">Need a Math Expert? Get Unstuck and Achieve Your Goals.</h1>
+      <p class="animate delay-1">From complex statistical analysis to simplifying challenging math concepts, I provide expert math solutions tailored to your needs. Whether you're a student, researcher, or business professional, let's solve your math problems together.</p>
+      <div class="cta-buttons animate delay-2">
+        <a href="#contact" class="btn btn-primary">Book a Free Consultation →</a>
+        <a href="https://www.upwork.com/freelancers/~0123456789" target="_blank" class="btn btn-outline">View Upwork Profile</a>
+      </div>
     </div>
+  </section>
 
-    <div class="section">
-        <h3>About Me: Your Dedicated Math Partner</h3> <!-- Rephrased Section Title -->
-        <ul class="bullet-point">
-            <li><strong>Ph.D. Candidate in Mathematics (University of the Philippines Diliman):</strong>  Deep understanding of advanced mathematical concepts and research methodologies.</li> <!-- Added Benefit -->
-            <li><strong>15+ Years of Math Tutoring & Consulting:</strong> Proven track record of helping clients from diverse backgrounds succeed with math.</li> <!-- Added Benefit, Quantified Experience -->
-            <li><strong>Expertise in Statistics, Problem Solving, and Math Education:</strong>  Versatile skillset to address a wide range of math challenges.</li> <!-- More Specific Expertise -->
-            <li><strong>Passionate about Making Math Accessible:</strong>  Committed to clear communication and effective teaching, breaking down complex topics into understandable parts.</li> <!-- Added Personal Touch -->
-        </ul>
-    </div>
-
-    <div class="section">
-        <h3>Services: How Can I Help You?</h3> <!-- Services Section with a Question -->
-        <ul class="bullet-point">
-            <li><strong>Personalized Math Tutoring (Online):</strong>  Get one-on-one support in various math subjects, from high school to university level. Overcome learning hurdles and build confidence.</li> <!-- Benefit-Oriented -->
-            <li><strong>Statistical Consulting for Research & Business:</strong>  Leverage data insights with expert statistical modeling, testing, and analysis. Improve decision-making and gain a competitive edge.</li> <!-- Benefit-Oriented -->
-            <li><strong>Math Content Creation & Review:</strong>  Need engaging math materials or expert review of your documents? I can create high-quality content and ensure accuracy.</li> <!-- Specific Service -->
-            <li><strong>Olympiad & Competitive Exam Coaching:</strong>  Prepare for math competitions with specialized training and problem-solving strategies honed over years of experience.</li> <!-- Niche Service -->
-        </ul>
-    </div>
-
-
-    <div class="section">
-        <h3>Work Experience:  Real-World Math Expertise</h3> <!-- Rephrased Section Title -->
-        <ul class="bullet-point">
-            <li><strong>Statistical Consultant (2019-Present):</strong> Helping clients gain insights from data through statistical models and testing.  See examples of my work in <a href="#experience-section">detailed experience below</a>.</li> <!-- Client Benefit & Link to detailed section -->
-            <li><strong>Math Content Trainer at OpenAI (2022):</strong>  Contributed to cutting-edge AI by providing expert math feedback for advanced problem-solving models. Demonstrates high-level math proficiency.</li> <!-- Prestige & Skill Highlight -->
-            <li><strong>Freelance Math Consultant (2016-Present):</strong>  Providing versatile math solutions for businesses and individuals, including process optimization and educational content. <a href="#experience-section">Learn more about my consulting projects</a>.</li> <!-- Versatility & Link -->
-            <li><strong>Content Creator for Plato Education (2018-2020):</strong> Developed math syllabi and exam content for Australian and New Zealand medical school entrance exams, showcasing expertise in curriculum design and exam preparation.</li> <!-- Specific Achievement & Credibility -->
-            <li><strong>Instructor at University of the Philippines (2006-2016):</strong>  Extensive experience in teaching and developing math curricula for higher education. <a href="#experience-section">View teaching experience details</a>.</li> <!-- Teaching Credibility & Link -->
-        </ul>
-    </div>
-
-
-    <div class="section">
-        <h3>Key Achievements & Recognition</h3> <!-- Rephrased Section Title -->
-        <ul class="bullet-point">
-            <li><strong>PCASTRD Outstanding Thesis Award (2009):</strong> Recognized for exceptional research in mathematics. <a href="https://web.archive.org/web/20230212084033/https://stii.dost.gov.ph/41-dost-council-fetes-best-thesis-dissertation-winners">Learn more about this award</a>.</li> <!-- Prestige & Link -->
-            <li><strong>Authored Research Papers & Presentations:</strong>  Active in the math research community with publications and talks at international conferences. <a href="#talks-section">See a list of presentations</a>.</li> <!-- Research Credibility & Link -->
-            <li><strong>Supervised Undergraduate & Master's Research:</strong>  Mentored students in advanced math research, demonstrating teaching and guidance capabilities. <a href="#supervision-section">View supervised research topics</a>.</li> <!-- Mentoring & Teaching Skill & Link -->
-            <li><strong>Philippine Mathematical Olympiad Test Development Committee Member:</strong>  Contributed to national math competitions, showcasing expertise in problem creation and curriculum alignment. <a href="http://pmo.ph/wp-content/uploads/2020/11/13th-PMO-SP.pdf">See involvement in PMO</a>.</li> <!-- National Level Involvement & Link -->
-        </ul>
-    </div>
-
-    <div class="section" id="experience-section"> <!-- Anchor for "detailed experience" links -->
-        <h3>Detailed Work Experience</h3>
-        <p>For clients interested in the specifics, here's a more detailed breakdown of my professional history:</p>
-        <ul class="bullet-point">
-            <li><strong>Statistical Consultant (2019-present)</strong>
-                <ul class="bullet-point" style="list-style-type: circle; margin-left: 1.5rem;"> <!-- Nested list for detail -->
-                    <li>Real-time and Asynchronous Consultant, Remote work via Sweden and Philippines</li>
-                    <li><a href="https://github.com/abcbalbuena/abcbalbuena.github.io/blob/main/polypharmacy.pdf">Created a logistic regression model to analyze a pediatric polypharmacy dataset</a>.</li></li>
-                    <li>Performed statistical testing for renal patient care outcomes.</li>
-                    <li>Evaluated data gathering techniques for heart failure studies.</li>
-                    <li>Edited journal articles with statistical analysis.</li>
-                    <li>Developed R algorithms for undergraduate theses.</li>
-                    <li>Tutored statistics for high school and university levels.</li>
-                </ul>
-            </li>
-            <li><strong>Contracting Math Content Trainer, OpenAI (2022)</strong>
-                <ul class="bullet-point" style="list-style-type: circle; margin-left: 1.5rem;">
-                    <li>Remote work via San Francisco, California</li>
-                    <li>Solved olympiad-type math problems for AI model feedback.</li>
-                    <li>Evaluated solution steps of OpenAI's math problem-solving model.</li>
-                </ul>
-            </li>
-            <li><strong>Freelance Maths Consulting (2016-present)</strong>
-                <ul class="bullet-point" style="list-style-type: circle; margin-left: 1.5rem;">
-                    <li>Real-time and Asynchronous Consultant, Quezon City, Philippines</li>
-                    <li>Consulted for business processes needing mathematical supervision.</li>
-                    <li>Created math-related content for education companies.</li>
-                    <li>Coached math olympiad training and remediation.</li>
-                    <li>Proofread and edited articles and theses.</li>
-                    <li>Translated math works into Filipino for an education startup.</li>
-                    <li>Created rigorous step-by-step solutions (more detailed than the teacher's manual) tp selected problems in <a href="https://github.com/abcbalbuena/abcbalbuena.github.io/blob/main/QuantumMechanicsMcIntyreAnswers.pdf"> Quantum Mechanics</a> and <a href="https://github.com/abcbalbuena/abcbalbuena.github.io/blob/main/electrodynamicsUHmanoa.pdf">Electrodynamics</a> textbooks.</li></li>
-                </ul>
-            </li>
-            <li><strong>Contracting Math Content Creator, Plato Education (2018-2020)</strong>
-                <ul class="bullet-point" style="list-style-type: circle; margin-left: 1.5rem;">
-                    <li>Remote work via Sydney, Australia</li>
-                    <li>Created UCAT syllabus and competencies.</li>
-                    <li>Created HSC exam questions and solutions.</li>
-                    <li>Drafted math blog entries for SEO testing.</li>
-                    <li>Trained new team members on content development.</li>
-                </ul>
-            </li>
-            <li><strong>Consulting Mathematician, JoomaJam Inc. (2017)</strong>
-                <ul class="bullet-point" style="list-style-type: circle; margin-left: 1.5rem;">
-                    <li>Makati, Philippines</li>
-                    <li>Advised early childhood learning startup on math for learning progress tracking and survey interpretation.</li>
-                </ul>
-            </li>
-            <li><strong>Instructor, Institute of Mathematics, University of the Philippines-Diliman (2006-2016)</strong>
-                <ul class="bullet-point" style="list-style-type: circle; margin-left: 1.5rem;">
-                    <li>Quezon City, Philippines</li>
-                    <li>Taught various undergraduate math courses.</li>
-                    <li>Wrote university-wide modules and lecture slides.</li>
-                    <li>Supervised undergraduate and Masters research.</li>
-                    <li>Headed committees for university-wide math exams.</li>
-                </ul>
-            </li>
-            <li><strong>Contracting Programmer, T.I.L.L. Photonics (2005-2006)</strong>
-                <ul class="bullet-point" style="list-style-type: circle; margin-left: 1.5rem;">
-                    <li>Remote work via Munich, Germany</li>
-                    <li>Evaluated C++ toolkits for microscopy Graphical Protocol Editor.</li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-
-
-    <div class="section" id="talks-section"> <!-- Anchor for "presentations" links -->
-        <h3>Presentations & Talks</h3>
-        <p>Sharing my research and insights with the math community:</p>
-        <ul class="bullet-point">
-            <li><strong>Invited Talks</strong>
-                <ul class="bullet-point" style="list-style-type: circle; margin-left: 1.5rem;">
-                    <li><a href="https://web.archive.org/web/20160905230026/https://unibersidadngpilipinas.tumblr.com/post/391715659/clickthelink-science-to-infinity-and-beyond">"On Orbits, Stable Sets, and Digital Topologies," UP College of Science Week (2010).</a></li>
-                    <li>"On Admissible Labelings and Digital Topologies," Symposium in Honor of Dr. Evelyn L. Tan (2006).</li>
-                </ul>
-            </li>
-            <li><strong>Contributed Talks</strong>
-                <ul class="bullet-point" style="list-style-type: circle; margin-left: 1.5rem;">
-                    <li>"On Solid Angles and Solid-Angle Polynomials," Mathematical Society of the Philippines Annual Convention (2014).</li>
-                    <li>"On Polynomials from Polytopes," Geometry Seminar, University of the Philippines-Diliman (2014).</li>
-                    <li>"On Khalimsky Manifolds and the Melin Digital Embedding Theorem," Mathematical Society of the Philippines Annual Convention (2012).</li>
-                    <li><a href="https://seams-ugm.id/2011/download/paper.pdf">"Persistent Homology in Time-Delay Reconstruction of Time Series," SEAMS-GMU International Conference (2011).</a>.</li>
-                    <li>"On Computing the Entropy of a Time Series and Its Barcodes," Mathematical Society of the Philippines Annual Convention (2010).</li>
-                    <li>"On Stable Sets, Orbits and Digital Topologies," Asian Mathematical Conference (2009).</li>
-                    <li>"The Number of Digital Topologies on $\mathbb{Z}^5$," Mathematical Society of the Philippines Annual Convention (2007).</li>
-                </ul>
-            </li>
-            <li><strong>Posters</strong>
-                <ul class="bullet-point" style="list-style-type: circle; margin-left: 1.5rem;">
-                    <li>"Persistent Homology and Entropy of One-Dimensional Time-Series," Math Centennial Conference, University of the Philippines-Diliman (2010).</li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-
-    <div class="section" id="participation-section"> <!-- Anchor for "participation" links -->
-        <h3>Participation in Programs, Workshops, and Conferences</h3>
-        <p>Continuous learning and engagement with the global math community:</p>
-        <ul class="bullet-point">
-            <li>BMS Summer School 2015, Convex Geometry - Discrete and Computational, TU Berlin, Germany.</li>
-            <li><a href="https://archive.md/BxXHm">Program on Inverse Moment Problems, Institute for Mathematical Sciences, Singapore (2013-2014)</a>.</li>
-            <li>CIMPA-UNESCO-MICINN-INDONESIA Research School on Non-linear Computational Geometry, Gadjah Mada University, Indonesia (2011).</li>
-            <li><a href="https://users.wpi.edu/~martin/RESEARCH/CIMPA/participants.pdf">CIMPA-UNESCO-Philippines Research School on Semi-definite Programming, University of the Philippines – Diliman (2009)</a>.</li>
-            <li>Severino V. Gervacio Workshop in Graph Theory and Combinatorics, De La Salle University, Manila (2009).</li>
-            <li>Mathematical Society of the Philippines Annual Convention (2007), Bohol.</li>
-            <li>Conference in Algebra and Combinatorics, Ateneo de Manila University (2006).</li>
-        </ul>
-    </div>
-
-    <div class="section" id="supervision-section"> <!-- Anchor for "supervision" links -->
-        <h3>Undergraduate and M.A. Research Paper Supervision</h3>
-        <p>Guiding the next generation of mathematicians:</p>
-        <ul class="bullet-point">
-            <li>"On Fibomacci Determinants from Five Diagonal Matrices" by M.D. Reyes (2011).</li>
-            <li>"A New Family of k-Fibonacci Numbers" by R. Erfe (2011).</li>
-            <li>"On Estimating Metric Entropy of Time Series" by J.K.Ventolero (2011).</li>
-            <li>"The Smith Normal Form in Computing Homology" by H.O.Baltazar (2011).</li>
-            <li>"On Using Persistent Homology to analyze Time Series" by M.A. Nuguid (2011).</li>
-            <li>"On Fibonacci Numbers from Matrix Determinants" by S.E. Solis (2010).</li>
-            <li>"On Fibonacci Properties and Matrices" by B.J. Bugayong (2010).</li>
-        </ul>
-    </div>
-
-    <div class="section" id="related-experience-section"> <!-- Anchor for "related experience" links -->
-        <h3>Related Experience & Community Involvement</h3>
-        <p>Beyond professional roles, contributing to the math community:</p>
-        <ul class="bullet-point">
-            <li>Member, Philippine Mathematical Olympiad Test Development Committee (<a href="http://pmo.ph/wp-content/uploads/2020/11/13th-PMO-SP.pdf">2008-2011</a>, <a href="http://pmo.ph/wp-content/uploads/2020/12/17th-PMO-SP.pdf">2015</a>).</li>
-            <li>Resource Person, DOST-SOEP 2013, University of the Philippines - Diliman.</li>
-            <li>Trainer, Math Olympiad Summer Camp, Institute of Mathematics, University of the Philippines - Diliman (<a href="https://web.archive.org/web/20200213074234/https://news.abs-cbn.com/lifestyle/youth/07/15/10/math-champions-back-home-medals">2010-2012</a>).</li>
-            <li>Resource Person on Counting Methods, Mathematical Enhancements, Recreations, and Innovations Toolkit for Teachers II (2011).</li>
-            <li>Resource Person on Counting Techniques, Mathematical Enhancements, Recreations, and Innovations Toolkit for Teachers (2010).</li>
-        </ul>
-    </div>
-
-
-    <div class="contact-section" id="contact-form-section"> <!-- Anchor for contact form -->
-        <h2>Ready to Solve Your Math Challenges?</h2> <!-- Stronger Contact Heading -->
-        <form class="inquiry-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea rows="5" placeholder="Describe your math needs or questions"></textarea> <!-- More Specific Placeholder -->
-            <button type="submit" class="get-started">Send Inquiry</button> <!-- Updated Button Text -->
-        </form>
-    </div>
-
-
-    <div class="social-links">
-        <h3>Connect With Me Online</h3> <!-- More Inviting Social Links Heading -->
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2>About Me: Your Dedicated Math Partner</h2>
+      <div class="about-content">
+        <div class="profile-placeholder">AB</div>
         <div>
-            <a href="#">Facebook</a>  <!-- Placeholder link -->
-            <a href="#">LinkedIn</a>  <!-- Added LinkedIn as a more professional platform -->
-            <a href="#">Twitter</a>  <!-- Placeholder link -->
+          <p><strong>15+ Years of Math Tutoring & Consulting:</strong> Proven track record of helping clients from diverse backgrounds succeed with math—from high school students to university researchers and business professionals.</p>
+          <br/>
+          <p><strong>Expertise in Statistics, Problem Solving, and Math Education:</strong> Versatile skillset to address a wide range of math challenges, from Olympiad coaching to statistical modeling for healthcare research.</p>
+          <br/>
+          <p><strong>Passionate about Making Math Accessible:</strong> Committed to clear communication and effective teaching, breaking down complex topics into understandable parts without sacrificing rigor.</p>
+          <br/>
+          <p><strong>Ph.D. Candidate in Mathematics (University of the Philippines Diliman):</strong> Deep understanding of advanced mathematical concepts and research methodologies.</p>
+          <br/>
+
         </div>
+      </div>
     </div>
+  </section>
 
+  <!-- Services -->
+  <section id="services" style="background: white;">
+    <div class="container">
+      <h2>Services: How Can I Help You?</h2>
+      <div class="skills-grid">
+        <div class="skill-card animate">
+          <h3>🎓 Personalized Math Tutoring</h3>
+          <p>One-on-one online support in various math subjects, from high school to university level. Overcome learning hurdles and build confidence with tailored lessons.</p>
+          <div class="skill-tags">
+            <span class="tag">Honors/AP/IB Math</span>
+            <span class="tag">Calculus & Linear Algebra</span>
+            <span class="tag">Test Prep (SAT/GRE)</span>
+            <span class="tag">Real-Time Platforms</span>
+          </div>
+        </div>
+        <div class="skill-card animate delay-1">
+          <h3>📊 Statistical Consulting</h3>
+          <p>Leverage data insights with expert statistical modeling, testing, and analysis. Improve decision-making and gain a competitive edge for research or business.</p>
+          <div class="skill-tags">
+            <span class="tag">R/Python Analysis</span>
+            <span class="tag">Hypothesis Testing</span>
+            <span class="tag">Regression Modeling</span>
+            <span class="tag">Healthcare Data</span>
+          </div>
+        </div>
+        <div class="skill-card animate">
+  		<h3>🚀 Math for AI/ML & Professional Development</h3>
+  		<p>Bridge the gap between foundational math and cutting-edge applications. Tailor lessons to your goals and timeline: whether you're a startup team preparing to read transformer papers, a lawyer pursuing an AI certificate, or an MBA student tackling quantitative courses</p>
+  		<div class="skill-tags">
+    		<span class="tag">Linear Algebra for ML</span>
+    		<span class="tag">Discrete Math for CS</span>
+    		<span class="tag">Quantitative MBA Prep</span>
+    		<span class="tag">Just-in-Time Learning</span>
+  		</div>
+		</div>
+        <div class="skill-card animate delay-2">
+          <h3>✍️ Math Content Creation</h3>
+          <p>Need engaging math materials or expert review of your documents? I create high-quality curriculum, exam questions, and solutions with LaTeX + GeoGebra.</p>
+          <div class="skill-tags">
+            <span class="tag">LaTeX/GeoGebra</span>
+            <span class="tag">Exam Question Banks</span>
+            <span class="tag">Curriculum Design</span>
+            <span class="tag">QA & Review</span>
+          </div>
+        </div>
+        <div class="skill-card animate">
+          <h3>🏆 Olympiad & Exam Coaching</h3>
+          <p>Prepare for math competitions with specialized training and problem-solving strategies honed over years of experience with the Philippine Mathematical Olympiad.</p>
+          <div class="skill-tags">
+            <span class="tag">PMO Training</span>
+            <span class="tag">Problem-Solving Strategies</span>
+            <span class="tag">Proof Techniques</span>
+            <span class="tag">Competition Psychology</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <p>© 2023 Alva Benedict Balbuena. All rights reserved.</p>
-    </footer>
+  <!-- Experience Timeline -->
+  <section id="experience">
+    <div class="container">
+      <h2>Professional Experience</h2>
+      <div class="timeline">
+        
+        <div class="timeline-item animate">
+          <span class="date">2022</span>
+          <h3>Contracting Math Content Trainer</h3>
+          <span class="location">OpenAI • Remote (San Francisco, CA)</span>
+          <ul>
+            <li>Solved olympiad-type math problems to provide expert feedback for AI model training</li>
+            <li>Evaluated solution steps of OpenAI's math problem-solving models for accuracy and pedagogical soundness</li>
+            <li>Contributed to improving AI reasoning capabilities in advanced mathematics</li>
+          </ul>
+        </div>
+        
+        <div class="timeline-item animate delay-1">
+          <span class="date">2019–Present</span>
+          <h3>Statistical Consultant</h3>
+          <span class="location">Freelance • Remote (Sweden/Philippines)</span>
+          <ul>
+            <li>Created logistic regression models to analyze pediatric polypharmacy datasets <a href="https://github.com/abcbalbuena/abcbalbuena.github.io/blob/main/polypharmacy.pdf" target="_blank">[Sample]</a></li>
+            <li>Performed statistical testing for heart failure studies and renal patient care outcomes</li>
+            <li>Edited journal articles with statistical analysis and developed R algorithms for undergraduate theses</li>
+            <li>Tutored statistics for high school, university, MBA, and graduate school levels</li>
+          </ul>
+        </div>
+        
+        <div class="timeline-item animate delay-2">
+          <span class="date">2018–2020</span>
+          <h3>Contracting Math Content Creator</h3>
+          <span class="location">Plato Education • Remote (Sydney, Australia)</span>
+          <ul>
+            <li>Created UCAT syllabus and competencies for Australian/New Zealand medical school entrance exams</li>
+            <li>Developed HSC exam questions and detailed solutions aligned to curriculum standards</li>
+            <li>Drafted math blog entries for SEO testing and trained new team members on content development</li>
+          </ul>
+        </div>
+        
+        <div class="timeline-item animate">
+          <span class="date">2017</span>
+          <h3>Consulting Mathematician</h3>
+          <span class="location">JoomaJam Inc. • Makati, Philippines</span>
+          <ul>
+            <li>Advised early childhood learning startup on mathematical frameworks for learning progress tracking</li>
+            <li>Designed survey interpretation methodologies and data visualization strategies</li>
+          </ul>
+        </div>
+        
+        <div class="timeline-item animate delay-1">
+          <span class="date">2016–Present</span>
+          <h3>Freelance Maths Consultant</h3>
+          <span class="location">Quezon City, Philippines</span>
+          <ul>
+            <li>Consulted for business processes requiring mathematical supervision and optimization</li>
+            <li>Created math-related educational content for edtech companies and translated works into Filipino</li>
+            <li>Coached math olympiad training and remediation; proofread/edited academic theses</li>
+            <li>Created rigorous step-by-step solutions for <a href="https://github.com/abcbalbuena/abcbalbuena.github.io/blob/main/QuantumMechanicsMcIntyreAnswers.pdf" target="_blank">Quantum Mechanics</a> and <a href="https://github.com/abcbalbuena/abcbalbuena.github.io/blob/main/electrodynamicsUHmanoa.pdf" target="_blank">Electrodynamics</a> textbooks</li>
+          </ul>
+        </div>
+        
+        <div class="timeline-item animate delay-2">
+          <span class="date">2006–2016</span>
+          <h3>Instructor, Institute of Mathematics</h3>
+          <span class="location">University of the Philippines-Diliman • Quezon City</span>
+          <ul>
+            <li>Taught various undergraduate mathematics courses including calculus, linear algebra, and discrete math</li>
+            <li>Wrote university-wide modules and lecture slides adopted across departments</li>
+            <li>Supervised undergraduate and Master's research projects in combinatorics and topology</li>
+            <li>Headed committees for university-wide mathematics examinations</li>
+          </ul>
+        </div>
+        
+        <div class="timeline-item animate">
+          <span class="date">2005–2006</span>
+          <h3>Contracting Programmer</h3>
+          <span class="location">T.I.L.L. Photonics • Remote (Munich, Germany)</span>
+          <ul>
+            <li>Evaluated C++ toolkits for microscopy Graphical Protocol Editor development</li>
+            <li>Contributed to scientific software architecture for biophysics applications</li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+  </section>
 
+  <!-- Achievements -->
+  <section id="achievements" style="background: white;">
+    <div class="container">
+      <h2>Key Achievements & Recognition</h2>
+      
+      <div class="section-card animate">
+        <h3>🏆 Awards & Honors</h3>
+        <ul class="achievements-list">
+          <li><strong>PCASTRD Outstanding Thesis Award (2009):</strong> Recognized for exceptional research in mathematics. <a href="https://web.archive.org/web/20230212084033/https://stii.dost.gov.ph/41-dost-council-fetes-best-thesis-dissertation-winners" target="_blank">Learn more</a></li>
+          <li><strong>Philippine Mathematical Olympiad Test Development Committee:</strong> Contributed to national math competitions (2008-2011, 2015). <a href="http://pmo.ph/wp-content/uploads/2020/11/13th-PMO-SP.pdf" target="_blank">See involvement</a></li>
+        </ul>
+      </div>
+      
+      <div class="section-card animate delay-1">
+        <h3>🎤 Selected Presentations</h3>
+        <ul class="achievements-list">
+          <li><strong>Invited:</strong> "On Orbits, Stable Sets, and Digital Topologies," UP College of Science Week (2010). <a href="https://web.archive.org/web/20160905230026/https://unibersidadngpilipinas.tumblr.com/post/391715659/clickthelink-science-to-infinity-and-beyond" target="_blank">View</a></li>
+          <li><strong>Contributed:</strong> "Persistent Homology in Time-Delay Reconstruction," SEAMS-GMU International Conference (2011). <a href="https://seams-ugm.id/2011/download/paper.pdf" target="_blank">Paper</a></li>
+          <li><strong>Poster:</strong> "Persistent Homology and Entropy of One-Dimensional Time-Series," Math Centennial Conference, UP-Diliman (2010)</li>
+        </ul>
+      </div>
+      
+      <div class="section-card animate delay-2">
+        <h3>🎓 Research Supervision</h3>
+        <p>Guided undergraduate and Master's students in advanced mathematics research:</p>
+        <ul class="achievements-list">
+          <li>"On Fibomacci Determinants from Five Diagonal Matrices" – M.D. Reyes (2011)</li>
+          <li>"A New Family of k-Fibonacci Numbers" – R. Erfe (2011)</li>
+          <li>"The Smith Normal Form in Computing Homology" – H.O. Baltazar (2011)</li>
+          <li>"On Using Persistent Homology to analyze Time Series" – M.A. Nuguid (2011)</li>
+          <li>"On Estimating Metric Entropy of Time Series" – J.K. Ventolero (2011)</li>
+          <li>"On Fibonacci Numbers from Matrix Determinants" - S.E. Solis (2010)</li>
+          <li>"On Fibonacci Properties and Matrices" - B.J. Bugayong (2010)</li>
+        </ul>
+      </div>
+.
+      
+      <div class="section-card animate">
+        <h3>🌍 Professional Development</h3>
+        <ul class="achievements-list">
+          <li>BMS Summer School 2015: Convex Geometry, TU Berlin, Germany</li>
+          <li>Program on Inverse Moment Problems, Institute for Mathematical Sciences, Singapore (2013-2014) <a href="https://archive.md/BxXHm" target="_blank">[Archive]</a></li>
+          <li>CIMPA-UNESCO Research Schools: Indonesia (2011), Philippines (2009)</li>
+          <li>Mathematical Society of the Philippines Annual Conventions (2007-2014)</li>
+        </ul>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2>Ready to Solve Your Math Challenges?</h2>
+      <div class="contact-content">
+        <p>Whether you need tutoring, statistical consulting, or expert math content review—I'd love to help. Send me a message and let's get started.</p>
+        
+        <!-- Mailto Contact Form with Spam Protection -->
+        <div class="mailto-form">
+          <form id="contactForm" onsubmit="sendMail(event)">
+            <!-- Honeypot Field (Spam Protection) -->
+            <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off"/>
+            
+            <div class="form-group">
+              <label for="name">Your Name *</label>
+              <input type="text" id="name" name="name" required placeholder="Jane Doe"/>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">I'm interested in... *</label>
+              <select id="subject" name="subject" required>
+                <option value="">Select a service...</option>
+                <option value="Math Tutoring Inquiry">🎓 Math Tutoring</option>
+                <option value="Statistical Consulting Inquiry">📊 Statistical Consulting</option>
+                <option value="Content Creation/Review Inquiry">✍️ Content Creation or Review</option>
+                <option value="Olympiad Coaching Inquiry">🏆 Olympiad/Exam Coaching</option>
+                <option value="General Question">❓ General Question</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Tell me about your project *</label>
+              <textarea id="message" name="message" rows="4" required placeholder="What math challenge can I help you solve?"></textarea>
+            </div>
+            
+            <!-- Math Challenge (Spam Protection) -->
+            <div class="form-group">
+              <label>Quick Check: <span id="mathQuestion"></span> *</label>
+              <input type="number" id="mathAnswer" name="mathAnswer" required placeholder="Your answer"/>
+              <div class="spam-error" id="mathError">Incorrect answer. Please try again.</div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+              ✉️ Send Email via Your Email App
+            </button>
+            
+            <p class="form-note">
+              <small>This opens your default email app with a pre-filled message. No data is stored or sent to third parties.</small>
+            </p>
+            
+            <div class="spam-error" id="timeError">Please take a moment to fill out the form properly.</div>
+            <div class="spam-error" id="honeypotError">Spam detected. Please contact me directly via email.</div>
+          </form>
+        </div>
+        
+        <!-- Direct Contact Links -->
+        <div class="contact-links" style="margin-top: 2rem;">
+          <a href="mailto:abcbalbuena@gmail.com" class="contact-link">
+            ✉️ Email Directly
+          </a>
+          <a href="https://www.upwork.com/freelancers/~0123456789" target="_blank" class="contact-link">
+            💼 Hire on Upwork
+          </a>
+          <a href="https://github.com/abcbalbuena" target="_blank" class="contact-link">
+            🔗 GitHub Portfolio
+          </a>
+        </div>
+        
+        <!-- Copy Email Button (Fallback) -->
+        <div class="copy-email">
+          <button onclick="copyEmail()" class="btn btn-outline" style="font-size: 0.875rem; padding: 0.5rem 1rem;">
+            📋 Copy Email Address
+          </button>
+          <span id="copyStatus" class="copy-status">Copied!</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2025 Alva Benedict Balbuena. All rights reserved. • Portfolio hosted on GitHub Pages</p>
+    </div>
+  </footer>
+
+  <script>
+    // ==================== SPAM PROTECTION CONFIG ====================
+    const SPAM_PROTECTION = {
+      minFormTime: 3000, // Minimum 3 seconds to fill form (bots are faster)
+      mathMin: 1, mathMax: 10, // Range for math challenge numbers
+      email: 'abcbalbuena' + '@' + 'gmail.com' // Obfuscated email
+    };
+
+    // ==================== MATH CHALLENGE ====================
+    let correctMathAnswer = 0;
+    
+    function generateMathChallenge() {
+      const num1 = Math.floor(Math.random() * (SPAM_PROTECTION.mathMax - SPAM_PROTECTION.mathMin + 1)) + SPAM_PROTECTION.mathMin;
+      const num2 = Math.floor(Math.random() * (SPAM_PROTECTION.mathMax - SPAM_PROTECTION.mathMin + 1)) + SPAM_PROTECTION.mathMin;
+      correctMathAnswer = num1 + num2;
+      document.getElementById('mathQuestion').textContent = `${num1} + ${num2} = ?`;
+    }
+    
+    // Initialize math challenge on page load
+    document.addEventListener('DOMContentLoaded', generateMathChallenge);
+
+    // ==================== FORM SUBMISSION HANDLER ====================
+    let formStartTime = Date.now();
+    
+    function sendMail(event) {
+      event.preventDefault();
+      
+      // Reset error messages
+      document.querySelectorAll('.spam-error').forEach(el => el.style.display = 'none');
+      
+      // 1. Honeypot Check
+      const honeypot = document.querySelector('input[name="website"]').value;
+      if (honeypot) {
+        document.getElementById('honeypotError').style.display = 'block';
+        return;
+      }
+      
+      // 2. Time Validation (prevent instant bot submissions)
+      const formTime = Date.now() - formStartTime;
+      if (formTime < SPAM_PROTECTION.minFormTime) {
+        document.getElementById('timeError').style.display = 'block';
+        return;
+      }
+      
+      // 3. Math Challenge Validation
+      const userAnswer = parseInt(document.getElementById('mathAnswer').value);
+      if (userAnswer !== correctMathAnswer) {
+        document.getElementById('mathError').style.display = 'block';
+        generateMathChallenge(); // Generate new challenge
+        document.getElementById('mathAnswer').value = '';
+        return;
+      }
+      
+      // 4. Get form values
+      const name = document.getElementById('name').value.trim();
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value.trim();
+      
+      if (!name || !subject || !message) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+      
+      // 5. Build mailto URL
+      const mailtoSubject = encodeURIComponent(`[Portfolio Inquiry] ${subject} - ${name}`);
+      const mailtoBody = encodeURIComponent(
+        `Hello Alva,\n\n${message}\n\n---\nSent from portfolio website\nName: ${name}\nInterest: ${subject}`
+      );
+      
+      // 6. Open mailto link
+      window.location.href = `mailto:${SPAM_PROTECTION.email}?subject=${mailtoSubject}&body=${mailtoBody}`;
+      
+      // Optional: Reset form after sending
+      // document.getElementById('contactForm').reset();
+      // generateMathChallenge();
+      // formStartTime = Date.now();
+    }
+
+    // ==================== COPY EMAIL FUNCTION ====================
+    function copyEmail() {
+      navigator.clipboard.writeText('abcbalbuena@gmail.com').then(() => {
+        const status = document.getElementById('copyStatus');
+        status.style.opacity = '1';
+        setTimeout(() => status.style.opacity = '0', 2000);
+      }).catch(err => {
+        console.error('Failed to copy email: ', err);
+        alert('Could not copy email. Please manually copy: abcbalbuena@gmail.com');
+      });
+    }
+
+    // ==================== MOBILE MENU TOGGLE ====================
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+    
+    mobileToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+    
+    // ==================== SMOOTH SCROLL FOR NAVIGATION ====================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          navLinks.classList.remove('active');
+        }
+      });
+    });
+    
+    // ==================== ACTIVE LINK HIGHLIGHTING ON SCROLL ====================
+    const sections = document.querySelectorAll('section');
+    const navItems = document.querySelectorAll('.nav-links a');
+    
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 100) {
+          current = section.getAttribute('id');
+        }
+      });
+      
+      navItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('href').slice(1) === current) {
+          item.classList.add('active');
+        }
+      });
+    });
+    
+    // ==================== ANIMATIONS ON SCROLL ====================
+    const animateOnScroll = () => {
+      const elements = document.querySelectorAll('.animate');
+      elements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }
+      });
+    };
+    
+    // Initialize animations
+    document.querySelectorAll('.animate').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    });
+    
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
+  </script>
 </body>
 </html>
